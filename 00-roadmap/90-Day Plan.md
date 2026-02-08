@@ -1,4 +1,5 @@
 ## 90-Day Cybersecurity Study Plan
+Reference: "https://github.com/devaares/Cybersecurity-Roadmap-2025/tree/main"
 
 This comprehensive 90-day study plan is designed for beginners looking to enter the field of cybersecurity. The plan is structured to cover essential certifications, hands-on technical skills, and career preparation to ensure you are job-ready by the end of the program. All resources are updated as of March 2025.
 
