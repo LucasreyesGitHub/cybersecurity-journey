@@ -1,0 +1,212 @@
+# What is Networking? — Resumen Técnico
+
+## Overview
+
+Este documento resume los conceptos fundamentales de redes (networking) presentados en el módulo “What is Networking?” de TryHackMe PreSecurity.
+
+El objetivo es consolidar conocimientos técnicos clave sobre cómo se estructura, transmite y gestiona la información en redes de computadoras, tanto a nivel lógico como físico.
+
+---
+
+# 1. ¿Qué es Networking?
+
+**Networking** se refiere al conjunto de componentes, protocolos y procesos que permiten la comunicación entre múltiples dispositivos conectados, ya sea dentro de una red local (LAN) o a través de internet.
+
+Una red permite:
+
+- Compartir información
+- Comunicarse entre dispositivos
+- Acceder a servicios remotos
+- Intercambiar datos de forma eficiente y controlada
+
+---
+
+# 2. Componentes Fundamentales de una Red
+
+## 🧩 Host / Endpoints
+
+Dispositivos finales que generan o consumen datos, por ejemplo:
+
+- Computadoras
+- Servidores
+- Móviles
+- IoT
+
+Cada endpoint tiene una **dirección IP** para su identificación única.
+
+---
+
+## 🔁 Switch
+
+Dispositivo de capa 2 utilizado para:
+
+- Conectar dispositivos dentro de una red LAN
+- Determinar *dónde* enviar cada paquete según la MAC address
+
+---
+
+## 🌐 Router
+
+Dispositivo de capa 3 utilizado para:
+
+- Conectar redes diferentes (p. ej. LAN → WAN)
+- Tomar decisiones de enrutamiento basadas en IP
+- Mantener tablas de ruta para enviar tráfico a su destino correcto
+
+---
+
+## 📡 Otros Dispositivos
+
+- **Firewall:** Filtra tráfico según políticas de seguridad
+- **Access Point (AP):** Permite conectividad inalámbrica
+- **Modem:** Interconecta redes locales con el proveedor de internet
+
+---
+
+# 3. Direcciones en Redes
+
+## 📍 MAC Address
+
+- Dirección física única asignada a cada tarjeta de red.
+- Se utiliza para comunicación dentro de la misma red local.
+- Formato: 6 bytes hexadecimales (p. ej., 00:1A:2B:3C:4D:5E)
+
+---
+
+## 🌎 IP Address
+
+- Dirección lógica que identifica un dispositivo en una red IP.
+- Puede ser:
+  - IPv4: ej. `192.168.0.1`
+  - IPv6: ej. `2001:0db8:85a3::`
+
+La IP puede ser **estática** o **dinámica** (asignada por DHCP).
+
+---
+
+# 4. Protocolos de Comunicación
+
+## 🔹 TCP (Transmission Control Protocol)
+
+- Orientado a la conexión
+- Garantiza entrega ordenada de datos
+- Usa mecanismo de *handshake* (3-way handshake)
+
+---
+
+## 🔹 UDP (User Datagram Protocol)
+
+- No orientado a conexión
+- Más rápido, pero sin garantía de entrega
+- Usado en streaming, DNS, VoIP
+
+---
+
+## 🔹 ICMP (Internet Control Message Protocol)
+
+- Protocolo de control y diagnóstico de red
+- Utilizado en herramientas como `ping` y `traceroute`
+
+---
+
+# 5. Modelo OSI & TCP/IP
+
+## 📊 Modelo OSI (7 capas)
+
+1. Physical  
+2. Data Link  
+3. Network  
+4. Transport  
+5. Session  
+6. Presentation  
+7. Application
+
+Este modelo conceptual ayuda a entender cómo se encapsula y transmite información.
+
+---
+
+## 🌐 Modelo TCP/IP (4 capas)
+
+El modelo TCP/IP es más práctico y corresponde a:
+
+1. Link  
+2. Internet  
+3. Transport  
+4. Application
+
+---
+
+# 6. Qué Pasa Cuando Navegas a un Sitio Web
+
+1. Se resuelve el nombre de dominio → **DNS**
+2. Se establece conexión entre cliente y servidor
+3. Se intercambian datos a través de TCP/UDP
+4. El router enruta paquetes a través de múltiples redes
+
+---
+
+# 7. Importancia del Networking en Ciberseguridad
+
+El entendimiento de redes es esencial porque:
+
+- Los atacantes explotan vectores de red (puertos abiertos, servicios expuestos)
+- La defensa depende del monitoreo de tráfico y eventos de red
+- Protocolos inseguros pueden ser vectores de l33ch y pivoteo
+- La defensa perimetral y segmentación se basa en arquitectura de red
+
+---
+
+# Technical Insights
+
+## 🔐 Firewalls
+
+Controlan el flujo de tráfico según reglas basadas en:
+
+- Puertos
+- Protocolos
+- Direcciones IP
+
+Son componentes obligatorios en infraestructuras seguras.
+
+---
+
+## 📡 Segmentación de Red
+
+Dividir la red en zonas de confianza separadas:
+
+- Reduce alcance de ataques
+- Facilita control granular de acceso
+
+---
+
+## 📊 NAT (Network Address Translation)
+
+Permite que múltiples dispositivos en una red local compartan una única IP pública.
+
+---
+
+# Conclusion
+
+Networking es la base de la comunicación digital. Comprender:
+
+- Direcciones MAC e IP
+- Protocolos como TCP/UDP
+- Dispositivos de red (router, switch, firewall)
+- Modelos OSI y TCP/IP
+
+es imprescindible para cualquier profesional de ciberseguridad.
+
+Este conocimiento no solo facilita el análisis de tráfico y detección de anomalías, sino que también permite entender vectores de ataque y diseñar estrategias defensivas efectivas.
+
+---
+
+# Next Steps
+
+Una vez dominados estos conceptos:
+
+- Practicar con herramientas como `Wireshark`, `tcpdump` y `Nmap`
+- Implementar y analizar redes en home lab
+- Aplicar segmentation, firewall rules & ACLs
+- Relacionar tráfico anómalo con técnicas MITRE ATT&CK
+
+---
