@@ -107,18 +107,34 @@ dig google.com
 Ver servidores DNS configurados en Linux:
 cat /etc/resolv.conf
 
-9. Conceptos Clave
+## 9. Conceptos Clave
 
-TTL (Time To Live): Tiempo durante el cual una respuesta DNS permanece en caché.
+### TTL (Time To Live)
+Tiempo durante el cual una respuesta DNS permanece almacenada en caché antes de expirar.
 
-Resolución recursiva: El resolver realiza todas las consultas necesarias hasta obtener la respuesta final.
+### Resolución Recursiva
+El resolver realiza todas las consultas necesarias hasta obtener la respuesta final para el cliente.
 
-Resolución iterativa: Cada servidor responde indicando el siguiente servidor a consultar.
+### Resolución Iterativa
+Cada servidor DNS responde indicando cuál es el siguiente servidor que debe consultarse.
 
-Caché DNS: Almacenamiento temporal de respuestas para reducir latencia.
+### Caché DNS
+Almacenamiento temporal de respuestas DNS para reducir latencia y carga en los servidores.
 
-DNSSEC: Extensión de seguridad que agrega validación criptográfica a las respuestas DNS.
+### DNSSEC
+Extensión de seguridad que agrega validación criptográfica a las respuestas DNS para evitar manipulación.
 
-10. Conclusión
+---
 
-DNS es una infraestructura fundamental de Internet y un punto estratégico en ciberseguridad. Comprender su funcionamiento permite detectar amenazas, analizar tráfico de red y entender múltiples vectores de ataque utilizados por actores maliciosos.
+## 10. Conclusión
+
+DNS es una infraestructura fundamental de Internet y un punto estratégico en ciberseguridad.
+
+Comprender su funcionamiento permite:
+
+- Detectar amenazas.
+- Analizar tráfico de red.
+- Identificar comportamientos anómalos.
+- Entender vectores de ataque basados en resolución de nombres.
+
+Un dominio sólido de DNS es esencial para cualquier profesional que aspire a trabajar en redes o en un SOC.
