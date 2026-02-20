@@ -107,6 +107,8 @@ dig google.com
 Ver servidores DNS configurados en Linux:
 cat /etc/resolv.conf
 
+```
+
 ## 9. Conceptos Clave
 
 ### TTL (Time To Live)
