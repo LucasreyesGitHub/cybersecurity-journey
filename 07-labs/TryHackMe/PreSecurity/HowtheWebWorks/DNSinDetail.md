@@ -1,131 +1,124 @@
+# DNS en Detalle
 
-DNS en Detalle
-¿Qué es DNS?
+## 1. ¿Qué es DNS?
 
-El DNS (Domain Name System) es el sistema que traduce nombres de dominio legibles por humanos, como google.com, en direcciones IP, como 142.250.190.14, que son las que las computadoras utilizan para comunicarse en la red.
+El **DNS (Domain Name System)** es el sistema que traduce nombres de dominio legibles por humanos (como `google.com`) en direcciones IP (como `142.250.190.14`), que son necesarias para que los dispositivos se comuniquen en la red.
 
 Se lo suele describir como la guía telefónica de Internet.
 
-Importancia en Ciberseguridad
+---
+
+## 2. Importancia en Ciberseguridad
 
 DNS es un componente crítico porque:
 
-Puede ser explotado para realizar ataques.
+- Puede ser explotado para realizar ataques.
+- Permite detectar actividad maliciosa mediante análisis de consultas.
+- Es fundamental en el monitoreo de tráfico dentro de un SOC.
+- Interviene en ataques como phishing, malware y exfiltración de datos.
 
-Permite detectar actividad maliciosa mediante análisis de consultas.
+El análisis de logs DNS es una práctica común en seguridad defensiva.
 
-Es fundamental en el monitoreo de tráfico dentro de un SOC.
+---
 
-Interviene en ataques como phishing, malware y exfiltración de datos.
+## 3. Funcionamiento del Proceso de Resolución DNS
 
-El análisis de logs DNS es una práctica común en entornos de seguridad defensiva.
+Cuando un usuario escribe `www.ejemplo.com`, ocurre lo siguiente:
 
-Funcionamiento del Proceso de Resolución DNS
+1. El navegador consulta al **resolver DNS** configurado en el sistema.
+2. Si la respuesta no está en caché, el resolver consulta:
+   - Servidores **Root**
+   - Servidores **TLD** (.com, .org, etc.)
+   - Servidor **autoritativo**
+3. El servidor autoritativo responde con la IP correspondiente.
+4. El resolver devuelve la IP al cliente.
 
-Cuando un usuario escribe www.ejemplo.com, ocurre lo siguiente:
+Este proceso se denomina **resolución recursiva**.
 
-El navegador consulta al resolver DNS configurado en el sistema (generalmente el del ISP).
+---
 
-Si la respuesta no está en caché, el resolver consulta:
+## 4. Tipos de Servidores DNS
 
-Servidores Root
+- **Resolver Recursivo**  
+  Realiza las consultas en nombre del cliente.
 
-Servidores TLD (.com, .org, etc.)
+- **Servidor Root**  
+  Primer nivel de la jerarquía DNS. Indica qué servidor TLD consultar.
 
-Servidor autoritativo del dominio
+- **Servidor TLD**  
+  Gestiona dominios de nivel superior como `.com`, `.net`, `.org`.
 
-El servidor autoritativo responde con la dirección IP correspondiente.
+- **Servidor Autoritativo**  
+  Contiene la información definitiva del dominio y responde con la IP correcta.
 
-El resolver devuelve la IP al cliente.
+---
 
-Este proceso se denomina resolución recursiva.
+## 5. Tipos de Registros DNS
 
-Tipos de Servidores DNS
+| Tipo  | Función |
+|-------|---------|
+| A     | Asocia un dominio con una dirección IPv4 |
+| AAAA  | Asocia un dominio con una dirección IPv6 |
+| MX    | Define el servidor de correo del dominio |
+| CNAME | Alias que apunta a otro dominio |
+| TXT   | Información adicional (SPF, verificaciones, etc.) |
+| NS    | Indica los servidores de nombres del dominio |
 
-Resolver Recursivo
-Realiza las consultas en nombre del cliente.
+---
 
-Servidor Root
-Primer nivel de la jerarquía DNS. Indica qué servidor TLD consultar.
+## 6. Ataques Relacionados con DNS
 
-Servidor TLD
-Gestiona dominios de nivel superior como .com, .net, .org.
-
-Servidor Autoritativo
-Contiene la información definitiva del dominio y responde con la IP correcta.
-
-Tipos de Registros DNS
-
-A
-Asocia un dominio con una dirección IPv4.
-
-AAAA
-Asocia un dominio con una dirección IPv6.
-
-MX
-Define el servidor de correo del dominio.
-
-CNAME
-Alias que apunta a otro dominio.
-
-TXT
-Permite almacenar información adicional (por ejemplo SPF o verificaciones).
-
-NS
-Indica los servidores de nombres del dominio.
-
-Ataques Relacionados con DNS
-
-DNS Spoofing / Cache Poisoning
+### DNS Spoofing / Cache Poisoning
 Manipulación de respuestas DNS para redirigir tráfico hacia un servidor malicioso.
 
-DNS Tunneling
+### DNS Tunneling
 Uso del protocolo DNS para transportar datos ocultos, común en exfiltración.
 
-DNS Amplification
+### DNS Amplification
 Ataque DDoS que aprovecha respuestas DNS amplificadas para saturar un objetivo.
 
-DNS en un Entorno SOC
+---
+
+## 7. DNS en un Entorno SOC
 
 En un Security Operations Center se analiza:
 
-Consultas a dominios sospechosos.
+- Consultas a dominios sospechosos.
+- Tráfico hacia dominios recientemente registrados.
+- Consultas repetitivas que pueden indicar beaconing.
+- Actividad anómala en patrones de resolución.
 
-Tráfico hacia dominios recientemente registrados.
+Herramientas utilizadas frecuentemente:
 
-Consultas repetitivas que pueden indicar beaconing.
+- Wireshark
+- Splunk
+- Zeek
 
-Actividad anómala en patrones de resolución.
+---
 
-Herramientas utilizadas frecuentemente incluyen Wireshark, Splunk y Zeek.
-
-Comandos Prácticos
+## 8. Comandos Prácticos
 
 Consultar resolución DNS:
 
+```bash
 nslookup google.com
 dig google.com
 
 Ver servidores DNS configurados en Linux:
-
 cat /etc/resolv.conf
-Conceptos Clave
 
-TTL (Time To Live)
-Tiempo durante el cual una respuesta DNS permanece en caché.
+9. Conceptos Clave
 
-Resolución recursiva
-El resolver realiza todas las consultas necesarias hasta obtener la respuesta final.
+TTL (Time To Live): Tiempo durante el cual una respuesta DNS permanece en caché.
 
-Resolución iterativa
-Cada servidor responde indicando el siguiente servidor a consultar.
+Resolución recursiva: El resolver realiza todas las consultas necesarias hasta obtener la respuesta final.
 
-Caché DNS
-Almacenamiento temporal de respuestas para reducir latencia.
+Resolución iterativa: Cada servidor responde indicando el siguiente servidor a consultar.
 
-DNSSEC
-Extensión de seguridad que agrega validación criptográfica a las respuestas DNS.
+Caché DNS: Almacenamiento temporal de respuestas para reducir latencia.
 
-Conclusión
+DNSSEC: Extensión de seguridad que agrega validación criptográfica a las respuestas DNS.
+
+10. Conclusión
 
 DNS es una infraestructura fundamental de Internet y un punto estratégico en ciberseguridad. Comprender su funcionamiento permite detectar amenazas, analizar tráfico de red y entender múltiples vectores de ataque utilizados por actores maliciosos.
