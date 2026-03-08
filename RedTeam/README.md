@@ -1,24 +1,22 @@
 # 🔴 Red Team Operations & Offensive Security
 
 ## 🎯 Objetivo Ofensivo
-El enfoque de esta sección es dominar el ciclo de vida de un ataque siguiendo el estándar **PTES (Penetration Testing Execution Standard)**. Aquí documento el proceso de identificación, explotación y post-explotación de sistemas, priorizando el entendimiento manual sobre el uso de herramientas automatizadas.
+El enfoque de esta sección es dominar el ciclo de vida de un ataque siguiendo estándares profesionales, priorizando el entendimiento manual de las vulnerabilidades y la explotación ética de sistemas en entornos controlados.
 
-## 📖 Bibliografía de Referencia
-* **"Penetration Testing: A Hands-On Introduction"** - Georgia Weidman.
-* **"The Hacker Playbook 3"** - Peter Kim.
-* **"Advanced Penetration Testing"** - Wil Allsopp.
+## 📖 Bibliografía de Referencia (Español)
+* **"Hacking Ético"** - Carlos Tori (Referencia fundamental para metodologías de intrusión).
+* **"Guía de Pruebas de OWASP"** - Proyecto OWASP (Estándar para auditoría de aplicaciones web).
+* **"Introducción al Hacking Ético"** - Autores Varios (OpenLibra - Fundamentos técnicos).
 
 ## 🛠️ Toolstack Ofensivo (Laboratorio)
-* **Reconocimiento:** Nmap, Masscan, Ffuf/Gobuster.
-* **Explotación:** Metasploit Framework (uso limitado), Searchsploit, Netcat.
-* **Post-Explotación:** LinPEAS/WinPEAS, Mimikatz, PowerShell Empire.
-* **Web:** Burp Suite Professional, SQLmap.
+* **Reconocimiento:** Nmap, Netdiscover, Arp-scan.
+* **Enumeración:** Gobuster, Dirb, Enum4linux (para SMB).
+* **Explotación:** Metasploit Framework, Searchsploit, Netcat.
 
 ## 🗂️ Estructura de Contenidos
-1.  **/Writeups:** Documentación detallada de máquinas (VulnHub, Hack The Box). 
-    * *Cada writeup incluye: Escaneo inicial, vectores fallidos, explotación y escalada de privilegios.*
-2.  **/Scripts:** Herramientas propias desarrolladas en Python, Bash o PowerShell para automatizar tareas de auditoría.
-3.  **/Cheatsheets:** Guías rápidas de comandos para transferencia de archivos, shells reversas y bypass de restricciones.
+1. **/Writeups:** Documentación paso a paso de máquinas vulneradas (VulnHub).
+2. **/Scripts:** Pequeñas herramientas propias desarrolladas en Python o Bash.
+3. **/Cheatsheets:** Guías rápidas de comandos para shells reversas y transferencia de archivos.
 
 ---
-> **Nota:** Todas las actividades aquí documentadas han sido realizadas en entornos controlados y con fines estrictamente educativos.
+> **Nota:** Todas las actividades aquí documentadas han sido realizadas en entornos aislados y con fines estrictamente educativos.
