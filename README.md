@@ -20,10 +20,10 @@ Mi formación se estructura bajo el estudio de los siguientes pilares:
 
 | Pilar | Referencia Bibliográfica | Aplicación Práctica |
 | :--- | :--- | :--- |
-| **Hacking Ético** | *Hacking Ético* (Carlos Tori) | Metodología de auditoría y fases de intrusión. |
-| **Pentesting** | *Introducción al Hacking Ético* (OpenLibra) | Explotación manual y reconocimiento de servicios. |
-| **Defensa/SOC** | *Guías de Seguridad e Incidentes* (INCIBE) | Respuesta ante incidentes y endurecimiento de sistemas. |
-| **Redes** | *Análisis de Tráfico con Wireshark* (INCIBE) | Inspección profunda de paquetes y protocolos. |
+| **Gestión de Incidentes** | *Guía Nacional de Notificación y Gestión de Ciberincidentes* (Gob. España) | Metodología de reporte, categorización de ataques y respuesta legal/técnica. |
+| **Hacking Ético** | *Hacking Ético* (Carlos Tori) | Fases de intrusión y auditoría técnica. |
+| **Defensa/SOC** | *Guías de Seguridad* (INCIBE) | Endurecimiento de sistemas y monitoreo de red. |
+| **Redes** | *Análisis de Tráfico con Wireshark* (INCIBE) | Inspección de paquetes y detección de anomalías. |
 
 ---
 
