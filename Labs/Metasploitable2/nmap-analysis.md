@@ -38,7 +38,6 @@ PORT      STATE SERVICE     VERSION
 6667/tcp  open  irc         UnrealIRCd
 8180/tcp  open  http        Apache Tomcat/Coyote JSP engine 1.1
 
-<img width="706" height="413" alt="image" src="https://github.com/user-attachments/assets/cbaeb136-3ad4-4093-9513-15cebb29944f" />
 
 
 [...]
