@@ -1,8 +1,8 @@
 
-TryHackMe Profile: https://tryhackme.com/p/lucasreyes.dev
+TryHackMe Profile: [https://tryhackme.com/p/lucasreyes.dev]
 
-Labex.io Profile: https://labex.io/users/lucas-reyes-13597597
+Labex.io Profile: [https://labex.io/users/lucas-reyes-13597597]
 
-HackTheBox: LucasReyes03
+HackTheBox: [https://app.hackthebox.com/users/app.hackthebox.com/users/3273367]
 
 
