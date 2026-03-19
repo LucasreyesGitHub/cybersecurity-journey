@@ -1,2 +1,2 @@
 ### Progreso del Modulo
-![Progreso](https://progress-bar.dev/1/)
+![Progreso](https://img.shields.io/static/v1?label=Progreso&message=1%25&color=blue)
