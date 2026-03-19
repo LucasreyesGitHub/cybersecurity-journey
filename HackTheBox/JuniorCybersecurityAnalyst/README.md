@@ -1,2 +1,2 @@
-
-![Progreso](https://img.shields.io/badge/Progreso-75%0-brightgreen)
+### Estado del Módulo de Seguridad
+![1%](https://progress-bar.dev/75/)
